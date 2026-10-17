@@ -1,0 +1,24 @@
+# Нормализация переносов строк
+* text=auto eol=lf
+
+# Текстовые файлы Godot
+*.gd text
+*.tscn text
+*.tres text
+*.godot text
+*.cfg text
+*.import text
+
+# Бинарные ассеты
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.svg text
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.ttf binary
+*.otf binary
+*.glb binary
+*.blend binary
