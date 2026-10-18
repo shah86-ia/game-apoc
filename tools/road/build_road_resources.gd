@@ -25,9 +25,6 @@ const SOURCE_MARKINGS := 1
 ## ((x − y)·32, (x + y)·16) — как у сетки тестовой сцены.
 const LAYER_OFFSET := Vector2(-32, 0)
 
-## Зум камеры героя на уровне 01 (меньше — дальше).
-const CAMERA_ZOOM := Vector2(0.8, 0.8)
-
 
 func _init() -> void:
 	var tiles: Array = _read_json(TILES_JSON)["tiles"]
@@ -137,8 +134,6 @@ func _build_level() -> void:
 	player.name = "Player"
 	player.position = start_pos
 	_add(root, world, player)
-	# Камера на этом уровне чуть дальше, чем в Player.tscn (там 1.0).
-	(player.get_node("Camera2D") as Camera2D).zoom = CAMERA_ZOOM
 
 	var packed := PackedScene.new()
 	packed.pack(root)

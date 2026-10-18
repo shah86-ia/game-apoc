@@ -47,7 +47,6 @@
 - Узлы: `Ground/Road` (дорога, TileSet `assets/tilesets/road/road_tileset.tres`),
   `Ground/RoadMarkings` (разметка), `Markers/PlayerStart` (временная точка старта у кармана),
   `World/Player` (экземпляр `characters/protagonist/Player.tscn`, Y-sort).
-- Камера на этом уровне отдалена: `World/Player/Camera2D` → `Zoom` = 0.8 (в самой сцене героя — 1.0; меньше — дальше).
 - Дороги проходимы — коллизий нет. Как рисовать и править дороги — `assets/tilesets/road/README.md`.
 
 ## Концепт-арт
