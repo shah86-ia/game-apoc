@@ -7,12 +7,16 @@
 ### Уровни
 - `levels/level-01-arrival/concept-art/level-01-arrival-home-bottom-right.png` — актуальный композиционный ориентир первого уровня: остановка слева сверху, дом героя справа снизу.
 - `levels/level-01-arrival/concept-art/level-01-gameplay-board-early.png` — сохранённый пользователем ранний концепт, не финальная версия.
+- `levels/level-01-arrival/concept-art/level-01-arrival-layout-v001.png` — утверждённая карта-схема уровня 01 (планировка, сетка 64×32); по ней собрана дорожная сеть `Level01.tscn`.
 - `levels/bunker/concept-art/bunker-overview.png` — концепт убежища.
 - `levels/gas-station/concept-art/gas-station.png` — концепт АЗС, отдельный уровень не утверждён.
 - `levels/gas-station/concept-art/industrial-complex.png` — промышленный комплекс; **фактическое размещение в GitHub**, тематически относится к заводу; перенос требует отдельной операции, пока не выполнять автоматически.
 
 ### Персонажи
 - `characters/protagonist/concept-art/character-sheet-variant-2.png` — текущий сохранённый лист героя.
+
+### Тайлсеты
+- `assets/tilesets/road/reference/road-tileset-sheet.png` — лист-презентация дорожного тайлсета; как атлас не используется, с него взят материал асфальта и цвета (см. `assets/tilesets/road/README.md`).
 
 ### Объекты
 - `objects/concept-art/level-01-objects-reference.png` — референсный лист объектов, не готовые спрайты.
