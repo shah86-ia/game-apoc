@@ -10,11 +10,11 @@
 Главная сцена — `scenes/test/iso_movement_test.tscn`: изометрическая сетка, главный герой (Idle, ходьба и бег в 8 направлениях), камера и тестовые препятствия (`World/Obstacles`).
 Запуск — **F5**. Управление — **WASD** (работает и на русской раскладке), **Shift** (левый или правый) + WASD — бег.
 
-- Скорость ходьбы: узел `World/Player` → инспектор → `Move Speed` (120 px/s).
+- Скорость ходьбы: сцена `characters/protagonist/Player.tscn` → узел `Player` → инспектор → `Move Speed` (120 px/s).
 - Бег: там же `Run Speed Multiplier` (1.68 → ≈ 202 px/s) и `Speed Change Rate` — плавность перехода ходьба ↔ бег (300 px/s², ≈ 0,27 с).
 - FPS анимаций: двойной клик по `characters/protagonist/animations/protagonist_frames.tres` → панель SpriteFrames → выбрать анимацию → поле FPS. Сейчас `walk_*` — 8, `run_*` — 10,5.
-- Масштаб героя: узел `World/Player/AnimatedSprite2D` → `Node2D → Transform → Scale` (сейчас 0.5 = рост 112 px).
-- Плавность камеры: узел `World/Player/Camera2D` → `Position Smoothing → Speed` (меньше — плавнее).
+- Масштаб героя: в `Player.tscn` узел `AnimatedSprite2D` → `Node2D → Transform → Scale` (сейчас 0.5 = рост 112 px).
+- Плавность камеры: в `Player.tscn` узел `Camera2D` → `Position Smoothing → Speed` (меньше — плавнее).
 - Препятствия (`World/Obstacles`) — обычные узлы сцены, без скриптов: `StaticBody2D` → `CollisionShape2D` (ромб на земле, точки тянутся мышкой) и узлы-клетки `Cell` с гранями `Polygon2D` (`Top`, `FaceLeft`, `FaceRight`) и контуром `Line2D`. Позиция блока — северный угол его ромба, ставится в вершину сетки: клетка (x, y) → ((x − y)·32, (x + y)·16). Новый блок — дублировать существующий (Ctrl+D) и передвинуть.
 - Герой и препятствия лежат в узле `World` с Y-sort: кто ниже на экране, тот рисуется поверх.
 
@@ -34,6 +34,14 @@
 5. Длинные объекты (забор, стена), которые сортируются по частям, — разбейте на дочерние `Node2D` по клеткам, как `LongBlock`: прозрачность включится, когда герой зайдёт за любую часть, а погаснет весь объект целиком.
 - Размер ромба сетки: узел `IsoGrid` → `Tile Size` (временно 64×32), размер поля — `Half Extent` (60 клеток в каждую сторону).
 
+## Уровень 01 — дорожная сеть
+Сцена `levels/level-01-arrival/Level01.tscn` (открыть и нажать **F6**): только дороги по схеме уровня,
+герой стоит у автобусного кармана. Подробности — `levels/level-01-arrival/README.md`,
+дорожный TileSet и как рисовать дороги — `assets/tilesets/road/README.md`.
+
+Герой — отдельная сцена `characters/protagonist/Player.tscn` (скрипт, спрайт, коллизия, камера); на тестовой
+сцене и на уровне стоят её экземпляры. Настройки скорости, бега и камеры меняются в этой сцене — для всех уровней сразу.
+
 ## Структура
 ```
 scenes/          — сцены (.tscn)
@@ -43,6 +51,9 @@ scripts/player/  — скрипты персонажа (player.gd)
 characters/<имя>/animations/ — игровые анимации персонажа и SpriteFrames
 scripts/test/    — вспомогательные скрипты тестовых сцен
 scripts/systems/ — общие системы (прозрачность объектов)
+assets/tilesets/ — TileSet'ы (дорога)
+levels/<уровень>/ — сцены уровней, концепты и описание
+tools/           — генераторы ассетов (Python/GDScript), в игру не входят
 assets/sprites/  — графика
 assets/audio/    — звуки и музыка
 assets/fonts/    — шрифты

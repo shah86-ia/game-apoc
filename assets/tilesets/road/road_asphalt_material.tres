@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://assets/tilesets/road/road_asphalt.gdshader" id="1_shader"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/road/asphalt-v001.png" id="2_asphalt"]
+
+[resource]
+shader = ExtResource("1_shader")
+shader_parameter/asphalt_texture = ExtResource("2_asphalt")

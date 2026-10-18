@@ -1,15 +1,10 @@
 [gd_scene format=3 uid="uid://h73d7ytuqnka"]
 
 [ext_resource type="Script" uid="uid://baaeemj3rhoo6" path="res://scripts/test/iso_grid.gd" id="1_grid"]
-[ext_resource type="Script" uid="uid://cnprnrt2iibd3" path="res://scripts/player/player.gd" id="2_player"]
-[ext_resource type="SpriteFrames" path="res://characters/protagonist/animations/protagonist_frames.tres" id="3_frames"]
 [ext_resource type="Script" uid="uid://cdtc1c44x4a7y" path="res://scripts/systems/occlusion_manager.gd" id="4_occlusion"]
 [ext_resource type="PackedScene" uid="uid://vnavaknxl1ms" path="res://objects/bus-stop/BusStop.tscn" id="5_busstop"]
 [ext_resource type="PackedScene" path="res://objects/houses/house-a/HouseA.tscn" id="6_house_a"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_feet"]
-radius = 8.0
-height = 28.0
+[ext_resource type="PackedScene" path="res://characters/protagonist/Player.tscn" id="7_player"]
 
 [sub_resource type="ConvexPolygonShape2D" id="Footprint_SmallBlock"]
 points = PackedVector2Array(0, 0, 32, 16, 0, 32, -32, 16)
@@ -41,26 +36,7 @@ half_extent = 60
 [node name="World" type="Node2D" parent="." unique_id=800706607]
 y_sort_enabled = true
 
-[node name="Player" type="CharacterBody2D" parent="World" unique_id=1676905293]
-motion_mode = 1
-wall_min_slide_angle = 0.0
-script = ExtResource("2_player")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/Player" unique_id=401608825]
-scale = Vector2(0.5, 0.5)
-sprite_frames = ExtResource("3_frames")
-animation = &"idle_s"
-autoplay = "idle_s"
-offset = Vector2(0, -114)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player" unique_id=1861838938]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_feet")
-
-[node name="Camera2D" type="Camera2D" parent="World/Player" unique_id=1128071638]
-position = Vector2(0, -26)
-process_callback = 0
-position_smoothing_enabled = true
+[node name="Player" parent="World" unique_id=1676905293 instance=ExtResource("7_player")]
 
 [node name="Obstacles" type="Node2D" parent="World" unique_id=1335376114]
 y_sort_enabled = true
