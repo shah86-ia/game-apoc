@@ -422,7 +422,7 @@ animations = [
 }],
 "loop": true,
 "name": &"run_s",
-"speed": 10.0
+"speed": 10.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -450,7 +450,7 @@ animations = [
 }],
 "loop": true,
 "name": &"run_n",
-"speed": 10.0
+"speed": 10.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -478,7 +478,7 @@ animations = [
 }],
 "loop": true,
 "name": &"run_w",
-"speed": 10.0
+"speed": 10.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -506,7 +506,7 @@ animations = [
 }],
 "loop": true,
 "name": &"run_e",
-"speed": 10.0
+"speed": 10.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -534,7 +534,7 @@ animations = [
 }],
 "loop": true,
 "name": &"run_sw",
-"speed": 10.0
+"speed": 10.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -562,7 +562,7 @@ animations = [
 }],
 "loop": true,
 "name": &"run_se",
-"speed": 10.0
+"speed": 10.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -590,7 +590,7 @@ animations = [
 }],
 "loop": true,
 "name": &"run_nw",
-"speed": 10.0
+"speed": 10.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -618,5 +618,5 @@ animations = [
 }],
 "loop": true,
 "name": &"run_ne",
-"speed": 10.0
+"speed": 10.5
 }]

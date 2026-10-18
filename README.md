@@ -11,8 +11,8 @@
 Запуск — **F5**. Управление — **WASD** (работает и на русской раскладке), **Shift** (левый или правый) + WASD — бег.
 
 - Скорость ходьбы: узел `World/Player` → инспектор → `Move Speed` (120 px/s).
-- Бег: там же `Run Speed Multiplier` (1.6 → 192 px/s) и `Speed Change Rate` — плавность перехода ходьба ↔ бег (300 px/s², ≈ 0,25 с).
-- FPS анимаций: двойной клик по `characters/protagonist/animations/protagonist_frames.tres` → панель SpriteFrames → выбрать анимацию → поле FPS. Сейчас `walk_*` — 8, `run_*` — 10.
+- Бег: там же `Run Speed Multiplier` (1.68 → ≈ 202 px/s) и `Speed Change Rate` — плавность перехода ходьба ↔ бег (300 px/s², ≈ 0,27 с).
+- FPS анимаций: двойной клик по `characters/protagonist/animations/protagonist_frames.tres` → панель SpriteFrames → выбрать анимацию → поле FPS. Сейчас `walk_*` — 8, `run_*` — 10,5.
 - Масштаб героя: узел `World/Player/AnimatedSprite2D` → `Node2D → Transform → Scale` (сейчас 0.5 = рост 112 px).
 - Плавность камеры: узел `World/Player/Camera2D` → `Position Smoothing → Speed` (меньше — плавнее).
 - Препятствия (`World/Obstacles`) — обычные узлы сцены, без скриптов: `StaticBody2D` → `CollisionShape2D` (ромб на земле, точки тянутся мышкой) и узлы-клетки `Cell` с гранями `Polygon2D` (`Top`, `FaceLeft`, `FaceRight`) и контуром `Line2D`. Позиция блока — северный угол его ромба, ставится в вершину сетки: клетка (x, y) → ((x − y)·32, (x + y)·16). Новый блок — дублировать существующий (Ctrl+D) и передвинуть.

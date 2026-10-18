@@ -7,7 +7,7 @@
   - `idle/` — статичные кадры: `protagonist-idle-<направление>-v001.png` (`south`, `north`, `west`, `east`, `south-west`, `south-east`, `north-west`, `north-east`), по стандарту `SPRITE-GENERATION-STANDARD.md` — с номером версии.
   - `walk/<направление>/` — кадры ходьбы, `...-frame-01-...` → `...-frame-06-...` (зациклено, 8 FPS). Есть все 8 направлений: `walk_s`, `walk_n`, `walk_e`, `walk_w`, `walk_ne`, `walk_nw`, `walk_se`, `walk_sw`.
     У `north` и `south` кадры лежат во вложенной папке версии (`protagonist-walk-north-v001/`), у остальных шести — прямо в папке направления.
-  - `running/<направление>/protagonist-run-<s|n|w|e|sw|se|nw|ne>-frame-01…06-v001.png` — кадры бега, анимации `run_*` (10 FPS, зациклены). При беге герой наклоняется вперёд, поэтому голова в кадре ниже, чем в Idle; масштаб и линия ступней те же.
+  - `running/<направление>/protagonist-run-<s|n|w|e|sw|se|nw|ne>-frame-01…06-v001.png` — кадры бега, анимации `run_*` (10,5 FPS, зациклены). При беге герой наклоняется вперёд, поэтому голова в кадре ниже, чем в Idle; масштаб и линия ступней те же.
   - Скрипт сам включает `walk_<направление>`, как только такая анимация появится в SpriteFrames; пока её нет — показывает `idle_<направление>`.
 - `protagonist/source/` — исходные выгрузки (например, архивы PixelLab с `metadata.json`). Godot эту папку игнорирует (`.gdignore`), в игре она не используется.
 
