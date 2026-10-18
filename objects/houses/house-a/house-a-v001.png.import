@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm2diudv7fomr"
-path="res://.godot/imported/protagonist-back-right-v001.png-1bf27d25d14af898eacd6b87fbf14e2b.ctex"
+uid="uid://c0s5qho4crjs2"
+path="res://.godot/imported/house-a-v001.png-1f82c762b5d873c01266a4fac28962d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/protagonist/concept-art/protagonist-directions-v001/protagonist-back-right-v001.png"
-dest_files=["res://.godot/imported/protagonist-back-right-v001.png-1bf27d25d14af898eacd6b87fbf14e2b.ctex"]
+source_file="res://objects/houses/house-a/house-a-v001.png"
+dest_files=["res://.godot/imported/house-a-v001.png-1f82c762b5d873c01266a4fac28962d4.ctex"]
 
 [params]
 
