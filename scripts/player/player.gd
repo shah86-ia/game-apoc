@@ -7,6 +7,9 @@ extends CharacterBody2D
 ## Скорость перемещения в пикселях в секунду.
 @export var move_speed: float = 120.0
 
+## Доля от move_speed, ниже которой герой считается стоящим (упёрся в стену).
+@export_range(0.0, 1.0, 0.01) var min_walk_speed_ratio: float = 0.15
+
 ## Суффиксы направлений по часовой стрелке, начиная с востока (угол 0 в Godot).
 const DIRECTION_SUFFIXES: Array[StringName] = [&"e", &"se", &"s", &"sw", &"w", &"nw", &"n", &"ne"]
 
@@ -30,9 +33,13 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 	# Поворачиваемся только при вводе; без ввода остаётся последнее направление.
-	var is_moving := direction != Vector2.ZERO
-	if is_moving:
+	if direction != Vector2.ZERO:
 		facing = _direction_to_suffix(direction)
+
+	# Ходьбу показываем по фактической скорости после столкновений:
+	# если герой упёрся в препятствие, он стоит в Idle, а не шагает на месте.
+	# При скольжении вдоль стены скорость ненулевая — ходьба продолжается.
+	var is_moving := get_real_velocity().length() > move_speed * min_walk_speed_ratio
 	_update_animation(is_moving)
 
 
