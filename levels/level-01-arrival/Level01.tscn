@@ -3,6 +3,9 @@
 [ext_resource type="Material" path="res://assets/tilesets/road/road_asphalt_material.tres" id="1_8s5tr"]
 [ext_resource type="TileSet" path="res://assets/tilesets/road/road_tileset.tres" id="2_hvndn"]
 [ext_resource type="PackedScene" path="res://characters/protagonist/Player.tscn" id="3_ulr1l"]
+[ext_resource type="PackedScene" uid="uid://vnavaknxl1ms" path="res://objects/bus-stop/BusStop.tscn" id="4_busstop"]
+[ext_resource type="PackedScene" path="res://objects/houses/house-a/HouseA.tscn" id="5_house_a"]
+[ext_resource type="Script" uid="uid://cdtc1c44x4a7y" path="res://scripts/systems/occlusion_manager.gd" id="6_occlusion"]
 
 [node name="Level01" type="Node2D" unique_id=908471066]
 
@@ -29,3 +32,16 @@ y_sort_enabled = true
 
 [node name="Player" parent="World" unique_id=463107558 instance=ExtResource("3_ulr1l")]
 position = Vector2(-3616, 2528)
+
+[node name="Obstacles" type="Node2D" parent="World"]
+y_sort_enabled = true
+
+[node name="BusStop" parent="World/Obstacles" instance=ExtResource("4_busstop")]
+position = Vector2(-3808, 2480)
+
+[node name="HouseA" parent="World/Obstacles" instance=ExtResource("5_house_a")]
+position = Vector2(-3040, 3152)
+
+[node name="OcclusionManager" type="Node" parent="." node_paths=PackedStringArray("target_sprite")]
+script = ExtResource("6_occlusion")
+target_sprite = NodePath("../World/Player/AnimatedSprite2D")
