@@ -1,0 +1,144 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://objects/bus-stop/bus-stop-v001.png" id="1_tex"]
+
+[sub_resource type="CircleShape2D" id="Shape_Post"]
+radius = 4
+
+[sub_resource type="CapsuleShape2D" id="Shape_WallBack"]
+radius = 4
+height = 198.906
+
+[sub_resource type="CapsuleShape2D" id="Shape_WallLeft"]
+radius = 4
+height = 52.944
+
+[sub_resource type="CapsuleShape2D" id="Shape_RailingRight"]
+radius = 4
+height = 57.244
+
+[sub_resource type="ConvexPolygonShape2D" id="Shape_BenchAndBin"]
+points = PackedVector2Array(7, -9, 22, -32, 114, -54, 136, -35, 19, -1)
+
+[node name="BusStop" type="Node2D" groups=["occludable"]]
+y_sort_enabled = true
+scale = Vector2(1.15, 1.15)
+
+[node name="Visual" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Slice01" type="Sprite2D" parent="Visual"]
+position = Vector2(-70, -24)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -258)
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 320)
+
+[node name="Slice02" type="Sprite2D" parent="Visual"]
+position = Vector2(-38, -24)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -258)
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 320)
+
+[node name="Slice03" type="Sprite2D" parent="Visual"]
+position = Vector2(-6, -3.789)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -278.211)
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 320)
+
+[node name="Slice04" type="Sprite2D" parent="Visual"]
+position = Vector2(26, -6.332)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -275.668)
+region_enabled = true
+region_rect = Rect2(96, 0, 32, 320)
+
+[node name="Slice05" type="Sprite2D" parent="Visual"]
+position = Vector2(58, -14.124)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -267.876)
+region_enabled = true
+region_rect = Rect2(128, 0, 32, 320)
+
+[node name="Slice06" type="Sprite2D" parent="Visual"]
+position = Vector2(90, -21.917)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -260.083)
+region_enabled = true
+region_rect = Rect2(160, 0, 32, 320)
+
+[node name="Slice07" type="Sprite2D" parent="Visual"]
+position = Vector2(122, -29.71)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -252.29)
+region_enabled = true
+region_rect = Rect2(192, 0, 32, 320)
+
+[node name="Slice08" type="Sprite2D" parent="Visual"]
+position = Vector2(154, -37.503)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -244.497)
+region_enabled = true
+region_rect = Rect2(224, 0, 32, 320)
+
+[node name="Slice09" type="Sprite2D" parent="Visual"]
+position = Vector2(186, -45.295)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -236.705)
+region_enabled = true
+region_rect = Rect2(256, 0, 32, 320)
+
+[node name="Slice10" type="Sprite2D" parent="Visual"]
+position = Vector2(218, -47)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -235)
+region_enabled = true
+region_rect = Rect2(288, 0, 32, 320)
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="PostBackLeft" type="CollisionShape2D" parent="Body"]
+position = Vector2(-38, -24)
+shape = SubResource("Shape_Post")
+
+[node name="PostFrontLeft" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, 0)
+shape = SubResource("Shape_Post")
+
+[node name="PostBackRight" type="CollisionShape2D" parent="Body"]
+position = Vector2(148, -67)
+shape = SubResource("Shape_Post")
+
+[node name="PostFrontRight" type="CollisionShape2D" parent="Body"]
+position = Vector2(193, -47)
+shape = SubResource("Shape_Post")
+
+[node name="WallBack" type="CollisionShape2D" parent="Body"]
+position = Vector2(55, -45.5)
+rotation = -1.797988
+shape = SubResource("Shape_WallBack")
+
+[node name="WallLeft" type="CollisionShape2D" parent="Body"]
+position = Vector2(-19, -12)
+rotation = -1.00748
+shape = SubResource("Shape_WallLeft")
+
+[node name="RailingRight" type="CollisionShape2D" parent="Body"]
+position = Vector2(170.5, -57)
+rotation = -1.152572
+shape = SubResource("Shape_RailingRight")
+
+[node name="BenchAndBin" type="CollisionShape2D" parent="Body"]
+shape = SubResource("Shape_BenchAndBin")

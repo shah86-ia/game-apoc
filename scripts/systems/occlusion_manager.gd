@@ -138,8 +138,9 @@ func _collect_shapes(node: Node, out: Array[PackedVector2Array]) -> void:
 		poly = xf * node.polygon
 	elif node is Sprite2D and node.texture:
 		var r: Rect2 = node.get_rect()
-		if not node.region_enabled and node.hframes == 1 and node.vframes == 1:
-			var used := _used_rect(node.texture)
+		if node.hframes == 1 and node.vframes == 1:
+			var region: Rect2 = node.region_rect if node.region_enabled else Rect2()
+			var used := _used_rect(node.texture, region)
 			r = Rect2(r.position + used.position, used.size)
 		poly = _rect_to_global(node, r)
 	elif node is AnimatedSprite2D and node.sprite_frames:
@@ -185,16 +186,22 @@ func _target_polygon() -> PackedVector2Array:
 
 
 ## Прямоугольник непрозрачных пикселей кадра (считается один раз на текстуру).
-func _used_rect(tex: Texture2D) -> Rect2:
-	if _used_rect_cache.has(tex):
-		return _used_rect_cache[tex]
-	var r := Rect2(Vector2.ZERO, tex.get_size())
+## Если задан region (спрайт показывает часть текстуры) — только внутри него,
+## в координатах этого региона.
+func _used_rect(tex: Texture2D, region: Rect2 = Rect2()) -> Rect2:
+	var key := [tex, region]
+	if _used_rect_cache.has(key):
+		return _used_rect_cache[key]
+	var full := region.has_area()
+	var r := Rect2(Vector2.ZERO, region.size if full else tex.get_size())
 	var img := tex.get_image()
 	if img:
 		if img.is_compressed():
 			img.decompress()
+		if full:
+			img = img.get_region(Rect2i(region))
 		r = Rect2(img.get_used_rect())
-	_used_rect_cache[tex] = r
+	_used_rect_cache[key] = r
 	return r
 
 
