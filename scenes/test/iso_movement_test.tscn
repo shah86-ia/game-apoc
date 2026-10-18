@@ -1,0 +1,38 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/test/iso_grid.gd" id="1_grid"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="2_player"]
+[ext_resource type="SpriteFrames" path="res://characters/protagonist/animations/protagonist_frames.tres" id="3_frames"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_feet"]
+radius = 8.0
+height = 28.0
+
+[node name="IsoMovementTest" type="Node2D"]
+
+[node name="IsoGrid" type="Node2D" parent="."]
+script = ExtResource("1_grid")
+
+[node name="World" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" type="CharacterBody2D" parent="World"]
+motion_mode = 1
+script = ExtResource("2_player")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/Player"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("3_frames")
+animation = &"idle_s"
+autoplay = "idle_s"
+offset = Vector2(0, -114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_feet")
+
+[node name="Camera2D" type="Camera2D" parent="World/Player"]
+position = Vector2(0, -26)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
