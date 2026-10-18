@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="2_player"]
 [ext_resource type="SpriteFrames" path="res://characters/protagonist/animations/protagonist_frames.tres" id="3_frames"]
 [ext_resource type="Script" path="res://scripts/systems/occlusion_manager.gd" id="4_occlusion"]
+[ext_resource type="PackedScene" path="res://objects/bus-stop/BusStop.tscn" id="5_busstop"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_feet"]
 radius = 8.0
@@ -472,6 +473,9 @@ default_color = Color(0.1, 0.1, 0.09, 1)
 points = PackedVector2Array(0, 16, 0, -154)
 width = 1.0
 default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="BusStop" parent="World/Obstacles" instance=ExtResource("5_busstop")]
+position = Vector2(256, 288)
 
 [node name="OcclusionManager" type="Node" parent="." node_paths=PackedStringArray("target_sprite")]
 script = ExtResource("4_occlusion")

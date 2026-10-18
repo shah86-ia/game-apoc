@@ -23,6 +23,7 @@
 
 - Общие параметры — в инспекторе узла `OcclusionManager`: `Occluded Alpha` (0.35), `Fade Time` (0.2 с), `Release Delay` (0.1 с — гасит мерцание), `Target Margin` (2 px).
 - Тестовый объект — `World/Obstacles/TallPillar` (коллизия только у основания, изображение высокое).
+- Автобусная остановка — `World/Obstacles/BusStop` (сцена `objects/bus-stop/BusStop.tscn`, подробности в `objects/bus-stop/README.md`).
 
 **Как подключить новое дерево, забор или здание:**
 1. Сделайте объект как обычно: `StaticBody2D` (с `CollisionShape2D` у основания) и визуальные дочерние узлы — `Sprite2D`, `AnimatedSprite2D`, `Polygon2D` или контейнер `Node2D` с ними. Положите его в `World/Obstacles` (или другой узел с Y-sort).
