@@ -13,7 +13,9 @@ points = PackedVector2Array(205, -18, 243.667, 3.333, 397.667, -64.667, 359, -86
 
 [node name="HouseA" type="Node2D" groups=["occludable"]]
 y_sort_enabled = true
-scale = Vector2(0.7, 0.7)
+rotation = -0.090353
+skew = 0.090353
+scale = Vector2(0.702867, 0.669690)
 
 [node name="Visual" type="Node2D" parent="."]
 y_sort_enabled = true
