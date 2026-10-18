@@ -29,3 +29,6 @@ y_sort_enabled = true
 
 [node name="Player" parent="World" unique_id=463107558 instance=ExtResource("3_ulr1l")]
 position = Vector2(-3616, 2528)
+
+[node name="Camera2D" parent="World/Player"]
+zoom = Vector2(0.8, 0.8)
