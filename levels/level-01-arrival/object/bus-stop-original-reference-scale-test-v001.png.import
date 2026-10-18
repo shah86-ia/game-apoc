@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3my71gvopybd"
-path="res://.godot/imported/protagonist-left-v001.png-4590761a982dd72e228f4d67072a7f21.ctex"
+uid="uid://bsbbqijbwmp4s"
+path="res://.godot/imported/bus-stop-original-reference-scale-test-v001.png-301f4d11ef27bf70abe9fee8bef23a97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/protagonist/concept-art/protagonist-directions-v001/protagonist-left-v001.png"
-dest_files=["res://.godot/imported/protagonist-left-v001.png-4590761a982dd72e228f4d67072a7f21.ctex"]
+source_file="res://levels/level-01-arrival/object/bus-stop-original-reference-scale-test-v001.png"
+dest_files=["res://.godot/imported/bus-stop-original-reference-scale-test-v001.png-301f4d11ef27bf70abe9fee8bef23a97.ctex"]
 
 [params]
 
