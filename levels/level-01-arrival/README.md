@@ -47,7 +47,14 @@
 - Узлы: `Ground/Road` (дорога, TileSet `assets/tilesets/road/road_tileset.tres`),
   `Ground/RoadMarkings` (разметка), `Markers/PlayerStart` (временная точка старта у кармана),
   `World/Player` (экземпляр `characters/protagonist/Player.tscn`, Y-sort).
-- Дороги проходимы — коллизий нет. Как рисовать и править дороги — `assets/tilesets/road/README.md`.
+- Дороги проходимы — коллизий нет.
+- Объекты (узел `World/Obstacles`, Y-sort) — пока только для проверки вида рядом с дорогой:
+  - `BusStop` — у автобусного кармана, лицом к дороге (`objects/bus-stop/BusStop.tscn`);
+  - `HouseA` — через улицу от остановки, в квартале слева от левой второстепенной дороги (`objects/houses/house-a/HouseA.tscn`).
+    Фасад с крыльцом у этого спрайта смотрит вправо-вниз, поэтому на дальней от камеры стороне улицы дом
+    стоит к дороге задней стороной.
+  - Двигать — мышью или полем `Position`; точки привязки описаны в README объектов.
+- `OcclusionManager` — прозрачность остановки и дома, когда они закрывают героя (как на тестовой сцене). Как рисовать и править дороги — `assets/tilesets/road/README.md`.
 
 ## Концепт-арт
 - `concept-art/level-01-arrival-home-bottom-right.png` — актуальный локальный ориентир композиции, не окончательная география.
