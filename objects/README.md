@@ -9,3 +9,4 @@
 
 ## Игровые объекты
 - [`bus-stop/BusStop.tscn`](bus-stop/README.md) — автобусная остановка: спрайт, коллизии, точка привязки, масштаб.
+- [`houses/house-a/HouseA.tscn`](houses/house-a/README.md) — деревянный дом с крыльцом.

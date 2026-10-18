@@ -1,0 +1,294 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://objects/houses/house-a/house-a-v001.png" id="1_tex"]
+
+[sub_resource type="ConvexPolygonShape2D" id="Shape_House"]
+points = PackedVector2Array(-405, -250, 0, 0, 465, -199, 60, -449)
+
+[sub_resource type="ConvexPolygonShape2D" id="Shape_Porch"]
+points = PackedVector2Array(35, -10, 100, 29, 530, -160, 465, -199)
+
+[sub_resource type="ConvexPolygonShape2D" id="Shape_StepsUpper"]
+points = PackedVector2Array(205, -18, 243.667, 3.333, 397.667, -64.667, 359, -86)
+
+[node name="HouseA" type="Node2D" groups=["occludable"]]
+y_sort_enabled = true
+scale = Vector2(0.7, 0.7)
+
+[node name="Visual" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Slice01" type="Sprite2D" parent="Visual"]
+position = Vector2(-433, -249.691)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -656.309)
+region_enabled = true
+region_rect = Rect2(256, 32, 32, 940)
+
+[node name="Slice02" type="Sprite2D" parent="Visual"]
+position = Vector2(-401, -247.531)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -658.469)
+region_enabled = true
+region_rect = Rect2(288, 32, 32, 940)
+
+[node name="Slice03" type="Sprite2D" parent="Visual"]
+position = Vector2(-369, -227.778)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -678.222)
+region_enabled = true
+region_rect = Rect2(320, 32, 32, 940)
+
+[node name="Slice04" type="Sprite2D" parent="Visual"]
+position = Vector2(-337, -208.025)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -697.975)
+region_enabled = true
+region_rect = Rect2(352, 32, 32, 940)
+
+[node name="Slice05" type="Sprite2D" parent="Visual"]
+position = Vector2(-305, -188.272)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -717.728)
+region_enabled = true
+region_rect = Rect2(384, 32, 32, 940)
+
+[node name="Slice06" type="Sprite2D" parent="Visual"]
+position = Vector2(-273, -168.519)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -737.481)
+region_enabled = true
+region_rect = Rect2(416, 32, 32, 940)
+
+[node name="Slice07" type="Sprite2D" parent="Visual"]
+position = Vector2(-241, -148.765)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -757.235)
+region_enabled = true
+region_rect = Rect2(448, 32, 32, 940)
+
+[node name="Slice08" type="Sprite2D" parent="Visual"]
+position = Vector2(-209, -129.012)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -776.988)
+region_enabled = true
+region_rect = Rect2(480, 32, 32, 940)
+
+[node name="Slice09" type="Sprite2D" parent="Visual"]
+position = Vector2(-177, -109.259)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -796.741)
+region_enabled = true
+region_rect = Rect2(512, 32, 32, 940)
+
+[node name="Slice10" type="Sprite2D" parent="Visual"]
+position = Vector2(-145, -89.506)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -816.494)
+region_enabled = true
+region_rect = Rect2(544, 32, 32, 940)
+
+[node name="Slice11" type="Sprite2D" parent="Visual"]
+position = Vector2(-113, -69.753)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -836.247)
+region_enabled = true
+region_rect = Rect2(576, 32, 32, 940)
+
+[node name="Slice12" type="Sprite2D" parent="Visual"]
+position = Vector2(-81, -50)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -856)
+region_enabled = true
+region_rect = Rect2(608, 32, 32, 940)
+
+[node name="Slice13" type="Sprite2D" parent="Visual"]
+position = Vector2(-49, -30.247)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -875.753)
+region_enabled = true
+region_rect = Rect2(640, 32, 32, 940)
+
+[node name="Slice14" type="Sprite2D" parent="Visual"]
+position = Vector2(-17, -10.494)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -895.506)
+region_enabled = true
+region_rect = Rect2(672, 32, 32, 940)
+
+[node name="Slice15" type="Sprite2D" parent="Visual"]
+position = Vector2(15, -6.419)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -899.581)
+region_enabled = true
+region_rect = Rect2(704, 32, 32, 940)
+
+[node name="Slice16" type="Sprite2D" parent="Visual"]
+position = Vector2(47, -2.8)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -903.2)
+region_enabled = true
+region_rect = Rect2(736, 32, 32, 940)
+
+[node name="Slice17" type="Sprite2D" parent="Visual"]
+position = Vector2(79, 16.4)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -922.4)
+region_enabled = true
+region_rect = Rect2(768, 32, 32, 940)
+
+[node name="Slice18" type="Sprite2D" parent="Visual"]
+position = Vector2(111, 24.165)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -930.165)
+region_enabled = true
+region_rect = Rect2(800, 32, 32, 940)
+
+[node name="Slice19" type="Sprite2D" parent="Visual"]
+position = Vector2(143, 10.1)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -916.1)
+region_enabled = true
+region_rect = Rect2(832, 32, 32, 940)
+
+[node name="Slice20" type="Sprite2D" parent="Visual"]
+position = Vector2(175, -3.965)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -902.035)
+region_enabled = true
+region_rect = Rect2(864, 32, 32, 940)
+
+[node name="Slice21" type="Sprite2D" parent="Visual"]
+position = Vector2(207, -16.897)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -889.103)
+region_enabled = true
+region_rect = Rect2(896, 32, 32, 940)
+
+[node name="Slice22" type="Sprite2D" parent="Visual"]
+position = Vector2(239, 0.759)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -906.759)
+region_enabled = true
+region_rect = Rect2(928, 32, 32, 940)
+
+[node name="Slice23" type="Sprite2D" parent="Visual"]
+position = Vector2(271, -8.736)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -897.264)
+region_enabled = true
+region_rect = Rect2(960, 32, 32, 940)
+
+[node name="Slice24" type="Sprite2D" parent="Visual"]
+position = Vector2(303, -22.866)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -883.134)
+region_enabled = true
+region_rect = Rect2(992, 32, 32, 940)
+
+[node name="Slice25" type="Sprite2D" parent="Visual"]
+position = Vector2(335, -36.996)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -869.004)
+region_enabled = true
+region_rect = Rect2(1024, 32, 32, 940)
+
+[node name="Slice26" type="Sprite2D" parent="Visual"]
+position = Vector2(367, -51.126)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -854.874)
+region_enabled = true
+region_rect = Rect2(1056, 32, 32, 940)
+
+[node name="Slice27" type="Sprite2D" parent="Visual"]
+position = Vector2(399, -102.421)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -803.579)
+region_enabled = true
+region_rect = Rect2(1088, 32, 32, 940)
+
+[node name="Slice28" type="Sprite2D" parent="Visual"]
+position = Vector2(431, -116.486)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -789.514)
+region_enabled = true
+region_rect = Rect2(1120, 32, 32, 940)
+
+[node name="Slice29" type="Sprite2D" parent="Visual"]
+position = Vector2(463, -130.551)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -775.449)
+region_enabled = true
+region_rect = Rect2(1152, 32, 32, 940)
+
+[node name="Slice30" type="Sprite2D" parent="Visual"]
+position = Vector2(495, -144.616)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -761.384)
+region_enabled = true
+region_rect = Rect2(1184, 32, 32, 940)
+
+[node name="Slice31" type="Sprite2D" parent="Visual"]
+position = Vector2(527, -158.681)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -747.319)
+region_enabled = true
+region_rect = Rect2(1216, 32, 32, 940)
+
+[node name="Slice32" type="Sprite2D" parent="Visual"]
+position = Vector2(559, -159.78)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-16, -746.22)
+region_enabled = true
+region_rect = Rect2(1248, 32, 32, 940)
+
+[node name="Slice33" type="Sprite2D" parent="Visual"]
+position = Vector2(581, -159.78)
+texture = ExtResource("1_tex")
+centered = false
+offset = Vector2(-6, -746.22)
+region_enabled = true
+region_rect = Rect2(1280, 32, 12, 940)
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="House" type="CollisionShape2D" parent="Body"]
+shape = SubResource("Shape_House")
+
+[node name="Porch" type="CollisionShape2D" parent="Body"]
+shape = SubResource("Shape_Porch")
+
+[node name="StepsUpper" type="CollisionShape2D" parent="Body"]
+shape = SubResource("Shape_StepsUpper")
