@@ -1,0 +1,36 @@
+{
+  "group_id": "b35a31d6-0c4e-4467-bed1-ec184a62fb9f",
+  "states": [
+    {
+      "character": {
+        "id": "fa27076e-cea5-4abc-a404-09ada77856ea",
+        "name": "Idle",
+        "prompt": "Lean adult male, approximately 28\u201332 years old, realistic human proportions, medium-length tousled brown hair, light stubble, serious neutral expression. Wearing a faded olive-green field jacket over a dark charcoal shirt, worn blue jeans, brown leather boots, and a dark charcoal backpack with two shoulder straps. Ordinary Russian man from the early 2000s. Muted earthy colors, detailed but clean pixel art, consistent silhouette, clothing, facial features and proportions across all eight directions. Full-body character, natural standing pose, no weapons, no accessories beyond the backpack, transparent background.",
+        "size": {
+          "width": 256,
+          "height": 256
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-18T10:23:21.917324+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-18T10:25:05.107226"
+}
