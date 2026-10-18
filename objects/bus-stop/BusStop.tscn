@@ -76,26 +76,26 @@ region_enabled = true
 region_rect = Rect2(160, 0, 32, 320)
 
 [node name="Slice07" type="Sprite2D" parent="Visual"]
-position = Vector2(122, -29.71)
+position = Vector2(122, -60.989)
 texture = ExtResource("1_tex")
 centered = false
-offset = Vector2(-16, -252.29)
+offset = Vector2(-16, -221.011)
 region_enabled = true
 region_rect = Rect2(192, 0, 32, 320)
 
 [node name="Slice08" type="Sprite2D" parent="Visual"]
-position = Vector2(154, -37.503)
+position = Vector2(154, -64.333)
 texture = ExtResource("1_tex")
 centered = false
-offset = Vector2(-16, -244.497)
+offset = Vector2(-16, -217.667)
 region_enabled = true
 region_rect = Rect2(224, 0, 32, 320)
 
 [node name="Slice09" type="Sprite2D" parent="Visual"]
-position = Vector2(186, -45.295)
+position = Vector2(186, -50.111)
 texture = ExtResource("1_tex")
 centered = false
-offset = Vector2(-16, -236.705)
+offset = Vector2(-16, -231.889)
 region_enabled = true
 region_rect = Rect2(256, 0, 32, 320)
 
