@@ -33,3 +33,28 @@
 Чтобы прозрачной была только крыша (и передние элементы), нужен второй PNG того же размера 320×320 —
 отдельный слой крыши (остальное прозрачно) и слой без крыши. Тогда в `Visual` добавляется слой `Roof`
 со своей сортировкой, и прозрачность вешается только на него.
+
+## Перспектива и новая картинка
+Нынешняя картинка нарисована не в проекции 2:1: длинная сторона идёт под ≈ 13° вместо 26,6°, поэтому
+остановка стоит под углом к дорогам. Выровнять наклоном (как дом) можно только ценой сужения на ~23 %,
+поэтому решено перерисовать картинку.
+
+Как получить новую (ChatGPT или другой генератор):
+1. Приложите две картинки: `bus-stop-v001.png` (дизайн) и `reference/bus-stop-guide-2to1.png` (шаблон:
+   сетка 2:1, красное «пятно» остановки 6 × 3 клетки ≈ 3,7 × 1,8 м, герой для масштаба).
+2. Промпт:
+```
+Redraw the bus stop shelter from the first image as pixel art for an isometric game in a TRUE 2:1
+dimetric projection. Use the second image as the exact guide: the red outline is the shelter's footprint
+on the ground grid. Every ground and roof edge must follow the grid lines (2 pixels across for 1 pixel up,
+26.57°); all posts and walls strictly vertical. Long side along the up-right grid line, back wall on the
+far (top-left) side, open side with the bench facing the viewer (bottom-right).
+Keep the same design, colors and wear: rusty corrugated roof, blue-grey metal frame, posters, wooden bench,
+trash bin at the front-left post. Scale: the character in the guide is 1.75 m tall; the roof is about 2.4 m
+above the ground. Output only the shelter: no grid, no red outline, no character, no ground, no shadow
+on the ground, no text. Plain flat single-color background (or transparent), PNG, 1024×1024.
+```
+3. Если углы опять «уехали», напишите: «Rewrite strictly along the grid lines of the guide: footprint must
+   match the red outline exactly». Обычно нужно 2–3 попытки.
+4. Готовую картинку положите в эту папку (например `bus-stop-v002-source.png`) — фон уберу, подгоню масштаб
+   и пересоберу коллизии.

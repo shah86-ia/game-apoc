@@ -1,7 +1,7 @@
-[gd_scene format=4]
+[gd_scene format=4 uid="uid://bfto6s77j5f7c"]
 
 [ext_resource type="Material" path="res://assets/tilesets/road/road_asphalt_material.tres" id="1_8s5tr"]
-[ext_resource type="TileSet" path="res://assets/tilesets/road/road_tileset.tres" id="2_hvndn"]
+[ext_resource type="TileSet" uid="uid://cbv4lww7jvnvi" path="res://assets/tilesets/road/road_tileset.tres" id="2_hvndn"]
 [ext_resource type="PackedScene" path="res://characters/protagonist/Player.tscn" id="3_ulr1l"]
 [ext_resource type="PackedScene" uid="uid://vnavaknxl1ms" path="res://objects/bus-stop/BusStop.tscn" id="4_busstop"]
 [ext_resource type="PackedScene" path="res://objects/houses/house-a/HouseA.tscn" id="5_house_a"]
@@ -33,15 +33,15 @@ y_sort_enabled = true
 [node name="Player" parent="World" unique_id=463107558 instance=ExtResource("3_ulr1l")]
 position = Vector2(-3616, 2528)
 
-[node name="Obstacles" type="Node2D" parent="World"]
+[node name="Obstacles" type="Node2D" parent="World" unique_id=2069964991]
 y_sort_enabled = true
 
-[node name="BusStop" parent="World/Obstacles" instance=ExtResource("4_busstop")]
-position = Vector2(-3808, 2480)
+[node name="BusStop" parent="World/Obstacles" unique_id=1251120501 instance=ExtResource("4_busstop")]
+position = Vector2(-3257.0002, 2308)
 
-[node name="HouseA" parent="World/Obstacles" instance=ExtResource("5_house_a")]
-position = Vector2(-3040, 3152)
+[node name="HouseA" parent="World/Obstacles" unique_id=1859406030 instance=ExtResource("5_house_a")]
+position = Vector2(-2628, 2034)
 
-[node name="OcclusionManager" type="Node" parent="." node_paths=PackedStringArray("target_sprite")]
+[node name="OcclusionManager" type="Node" parent="." unique_id=1900642283 node_paths=PackedStringArray("target_sprite")]
 script = ExtResource("6_occlusion")
 target_sprite = NodePath("../World/Player/AnimatedSprite2D")
