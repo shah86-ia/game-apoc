@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/test/iso_grid.gd" id="1_grid"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="2_player"]
 [ext_resource type="SpriteFrames" path="res://characters/protagonist/animations/protagonist_frames.tres" id="3_frames"]
+[ext_resource type="Script" path="res://scripts/systems/occlusion_manager.gd" id="4_occlusion"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_feet"]
 radius = 8.0
@@ -25,6 +26,9 @@ points = PackedVector2Array(0, 0, 32, 16, 0, 32, -32, 16)
 
 [sub_resource type="ConvexPolygonShape2D" id="Footprint_GapBlock4"]
 points = PackedVector2Array(0, 0, 32, 16, 0, 32, -32, 16)
+
+[sub_resource type="ConvexPolygonShape2D" id="Footprint_TallPillar"]
+points = PackedVector2Array(0, 8, 16, 16, 0, 24, -16, 16)
 
 [node name="IsoMovementTest" type="Node2D"]
 
@@ -430,3 +434,45 @@ default_color = Color(0.1, 0.1, 0.09, 1)
 points = PackedVector2Array(0, 16, 0, -24)
 width = 1.0
 default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="TallPillar" type="StaticBody2D" parent="World/Obstacles" groups=["occludable"]]
+y_sort_enabled = true
+position = Vector2(-192, -96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Obstacles/TallPillar"]
+shape = SubResource("Footprint_TallPillar")
+
+[node name="Cell" type="Node2D" parent="World/Obstacles/TallPillar"]
+position = Vector2(0, 16)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/TallPillar/Cell"]
+color = Color(0.375, 0.338, 0.285, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -154, -32, -170)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/TallPillar/Cell"]
+color = Color(0.275, 0.248, 0.209, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -170, 0, -154)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/TallPillar/Cell"]
+color = Color(0.5, 0.45, 0.38, 1)
+polygon = PackedVector2Array(0, -186, 32, -170, 0, -154, -32, -170)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/TallPillar/Cell"]
+points = PackedVector2Array(0, -186, 32, -170, 0, -154, -32, -170)
+closed = true
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/TallPillar/Cell"]
+points = PackedVector2Array(-32, -170, -32, 0, 0, 16, 32, 0, 32, -170)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline3" type="Line2D" parent="World/Obstacles/TallPillar/Cell"]
+points = PackedVector2Array(0, 16, 0, -154)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="OcclusionManager" type="Node" parent="." node_paths=PackedStringArray("target_sprite")]
+script = ExtResource("4_occlusion")
+target_sprite = NodePath("../World/Player/AnimatedSprite2D")
