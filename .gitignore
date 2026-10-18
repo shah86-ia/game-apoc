@@ -20,3 +20,6 @@ Thumbs.db
 *.tmp
 .vscode/
 .idea/
+
+# Промежуточные файлы генератора дорог
+tools/road/out/
