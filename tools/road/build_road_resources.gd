@@ -7,7 +7,8 @@ extends SceneTree
 ##   godot --headless --path . -s tools/road/build_road_resources.gd -- level     # + Level01.tscn
 ##
 ## ВНИМАНИЕ: сборка с флагом level перезаписывает levels/level-01-arrival/Level01.tscn целиком,
-## включая ручные правки дорог, разметки и положения героя.
+## включая ручные правки дорог, разметки, положения героя и все расставленные объекты (остановка, дом).
+## Для правок дорог на готовом уровне пользуйтесь редактором Godot, а не этой сборкой.
 
 const TILES_JSON := "res://tools/road/out/road_tiles.json"
 const LEVEL_JSON := "res://tools/road/out/level01_cells.json"
