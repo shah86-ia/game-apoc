@@ -454,8 +454,8 @@ default_color = Color(0.1, 0.1, 0.09, 1)
 [node name="BusStop" parent="World/Obstacles" unique_id=804035283 instance=ExtResource("5_busstop")]
 position = Vector2(-1012, -55)
 
-[node name="HouseA" parent="World/Obstacles" instance=ExtResource("6_house_a")]
-position = Vector2(-384, 800)
+[node name="HouseA" parent="World/Obstacles" unique_id=1053676162 instance=ExtResource("6_house_a")]
+position = Vector2(-551, -322)
 
 [node name="OcclusionManager" type="Node" parent="." unique_id=1418663714 node_paths=PackedStringArray("target_sprite")]
 script = ExtResource("4_occlusion")
