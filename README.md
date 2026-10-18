@@ -24,6 +24,7 @@
 - Общие параметры — в инспекторе узла `OcclusionManager`: `Occluded Alpha` (0.35), `Fade Time` (0.2 с), `Min Coverage` (0.25 — доля закрытого героя для включения; выключается при доле вдвое меньше), `Release Delay` (0.1 с), `Sample Step` (3 — точность подсчёта).
 - Тестовый объект — `World/Obstacles/TallPillar` (коллизия только у основания, изображение высокое).
 - Автобусная остановка — `World/Obstacles/BusStop` (сцена `objects/bus-stop/BusStop.tscn`, подробности в `objects/bus-stop/README.md`).
+- Дом — `World/Obstacles/HouseA` (сцена `objects/houses/house-a/HouseA.tscn`, подробности в `objects/houses/house-a/README.md`).
 
 **Как подключить новое дерево, забор или здание:**
 1. Сделайте объект как обычно: `StaticBody2D` (с `CollisionShape2D` у основания) и визуальные дочерние узлы — `Sprite2D`, `AnimatedSprite2D`, `Polygon2D` или контейнер `Node2D` с ними. Положите его в `World/Obstacles` (или другой узел с Y-sort).
@@ -31,7 +32,7 @@
 3. На сцене должен быть один узел `OcclusionManager` с заполненным полем `Target Sprite` (спрайт героя). В новой сцене — скопируйте его из тестовой.
 4. При необходимости переопределите параметры для этого объекта: **Инспектор → Metadata → Add Metadata**: `occlusion_alpha` (float), `occlusion_fade_time` (float), `occlusion_min_coverage` (float), `occlusion_enabled` (bool).
 5. Длинные объекты (забор, стена), которые сортируются по частям, — разбейте на дочерние `Node2D` по клеткам, как `LongBlock`: прозрачность включится, когда герой зайдёт за любую часть, а погаснет весь объект целиком.
-- Размер ромба сетки: узел `IsoGrid` → `Tile Size` (временно 64×32).
+- Размер ромба сетки: узел `IsoGrid` → `Tile Size` (временно 64×32), размер поля — `Half Extent` (60 клеток в каждую сторону).
 
 ## Структура
 ```
