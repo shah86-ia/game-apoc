@@ -1,0 +1,350 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/idle/protagonist-idle-south-v001.png" id="1_idle_s"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/idle/protagonist-idle-north-v001.png" id="2_idle_n"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/idle/protagonist-idle-west-v001.png" id="3_idle_w"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/idle/protagonist-idle-east-v001.png" id="4_idle_e"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/idle/protagonist-idle-south-west-v001.png" id="5_idle_sw"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/idle/protagonist-idle-south-east-v001.png" id="6_idle_se"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/idle/protagonist-idle-north-west-v001.png" id="7_idle_nw"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/idle/protagonist-idle-north-east-v001.png" id="8_idle_ne"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south/protagonist-walk-south-v001/protagonist-walk-south-frame-01-v001.png" id="9_walk_s_01"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south/protagonist-walk-south-v001/protagonist-walk-south-frame-02-v001.png" id="10_walk_s_02"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south/protagonist-walk-south-v001/protagonist-walk-south-frame-03-v001.png" id="11_walk_s_03"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south/protagonist-walk-south-v001/protagonist-walk-south-frame-04-v001.png" id="12_walk_s_04"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south/protagonist-walk-south-v001/protagonist-walk-south-frame-05-v001.png" id="13_walk_s_05"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south/protagonist-walk-south-v001/protagonist-walk-south-frame-06-v001.png" id="14_walk_s_06"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north/protagonist-walk-north-v001/protagonist-walk-north-frame-01-v001.png" id="15_walk_n_01"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north/protagonist-walk-north-v001/protagonist-walk-north-frame-02-v001.png" id="16_walk_n_02"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north/protagonist-walk-north-v001/protagonist-walk-north-frame-03-v001.png" id="17_walk_n_03"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north/protagonist-walk-north-v001/protagonist-walk-north-frame-04-v001.png" id="18_walk_n_04"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north/protagonist-walk-north-v001/protagonist-walk-north-frame-05-v001.png" id="19_walk_n_05"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north/protagonist-walk-north-v001/protagonist-walk-north-frame-06-v001.png" id="20_walk_n_06"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/east/protagonist-walk-east-frame-01-v001.png" id="21_walk_e_01"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/east/protagonist-walk-east-frame-02-v001.png" id="22_walk_e_02"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/east/protagonist-walk-east-frame-03-v001.png" id="23_walk_e_03"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/east/protagonist-walk-east-frame-04-v001.png" id="24_walk_e_04"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/east/protagonist-walk-east-frame-05-v001.png" id="25_walk_e_05"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/east/protagonist-walk-east-frame-06-v001.png" id="26_walk_e_06"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/west/protagonist-walk-west-frame-01-v001.png" id="27_walk_w_01"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/west/protagonist-walk-west-frame-02-v001.png" id="28_walk_w_02"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/west/protagonist-walk-west-frame-03-v001.png" id="29_walk_w_03"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/west/protagonist-walk-west-frame-04-v001.png" id="30_walk_w_04"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/west/protagonist-walk-west-frame-05-v001.png" id="31_walk_w_05"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/west/protagonist-walk-west-frame-06-v001.png" id="32_walk_w_06"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-east/protagonist-walk-north-east-frame-01-v001.png" id="33_walk_ne_01"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-east/protagonist-walk-north-east-frame-02-v001.png" id="34_walk_ne_02"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-east/protagonist-walk-north-east-frame-03-v001.png" id="35_walk_ne_03"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-east/protagonist-walk-north-east-frame-04-v001.png" id="36_walk_ne_04"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-east/protagonist-walk-north-east-frame-05-v001.png" id="37_walk_ne_05"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-east/protagonist-walk-north-east-frame-06-v001.png" id="38_walk_ne_06"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-west/protagonist-walk-north-west-frame-01-v001.png" id="39_walk_nw_01"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-west/protagonist-walk-north-west-frame-02-v001.png" id="40_walk_nw_02"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-west/protagonist-walk-north-west-frame-03-v001.png" id="41_walk_nw_03"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-west/protagonist-walk-north-west-frame-04-v001.png" id="42_walk_nw_04"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-west/protagonist-walk-north-west-frame-05-v001.png" id="43_walk_nw_05"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/north-west/protagonist-walk-north-west-frame-06-v001.png" id="44_walk_nw_06"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-east/protagonist-walk-south-east-frame-01-v001.png" id="45_walk_se_01"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-east/protagonist-walk-south-east-frame-02-v001.png" id="46_walk_se_02"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-east/protagonist-walk-south-east-frame-03-v001.png" id="47_walk_se_03"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-east/protagonist-walk-south-east-frame-04-v001.png" id="48_walk_se_04"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-east/protagonist-walk-south-east-frame-05-v001.png" id="49_walk_se_05"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-east/protagonist-walk-south-east-frame-06-v001.png" id="50_walk_se_06"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-west/protagonist-walk-south-west-frame-01-v001.png" id="51_walk_sw_01"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-west/protagonist-walk-south-west-frame-02-v001.png" id="52_walk_sw_02"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-west/protagonist-walk-south-west-frame-03-v001.png" id="53_walk_sw_03"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-west/protagonist-walk-south-west-frame-04-v001.png" id="54_walk_sw_04"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-west/protagonist-walk-south-west-frame-05-v001.png" id="55_walk_sw_05"]
+[ext_resource type="Texture2D" path="res://characters/protagonist/animations/walk/south-west/protagonist-walk-south-west-frame-06-v001.png" id="56_walk_sw_06"]
+
+[resource]
+animations = [
+{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_idle_s")
+}],
+"loop": true,
+"name": &"idle_s",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_idle_n")
+}],
+"loop": true,
+"name": &"idle_n",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_idle_w")
+}],
+"loop": true,
+"name": &"idle_w",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_idle_e")
+}],
+"loop": true,
+"name": &"idle_e",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_idle_sw")
+}],
+"loop": true,
+"name": &"idle_sw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_idle_se")
+}],
+"loop": true,
+"name": &"idle_se",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_idle_nw")
+}],
+"loop": true,
+"name": &"idle_nw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_idle_ne")
+}],
+"loop": true,
+"name": &"idle_ne",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_walk_s_01")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("10_walk_s_02")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("11_walk_s_03")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("12_walk_s_04")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("13_walk_s_05")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("14_walk_s_06")
+}],
+"loop": true,
+"name": &"walk_s",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_walk_n_01")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("16_walk_n_02")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("17_walk_n_03")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("18_walk_n_04")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("19_walk_n_05")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("20_walk_n_06")
+}],
+"loop": true,
+"name": &"walk_n",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_walk_e_01")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("22_walk_e_02")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("23_walk_e_03")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("24_walk_e_04")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("25_walk_e_05")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("26_walk_e_06")
+}],
+"loop": true,
+"name": &"walk_e",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_walk_w_01")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("28_walk_w_02")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("29_walk_w_03")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("30_walk_w_04")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("31_walk_w_05")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("32_walk_w_06")
+}],
+"loop": true,
+"name": &"walk_w",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_walk_ne_01")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("34_walk_ne_02")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("35_walk_ne_03")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("36_walk_ne_04")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("37_walk_ne_05")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("38_walk_ne_06")
+}],
+"loop": true,
+"name": &"walk_ne",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_walk_nw_01")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("40_walk_nw_02")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("41_walk_nw_03")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("42_walk_nw_04")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("43_walk_nw_05")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("44_walk_nw_06")
+}],
+"loop": true,
+"name": &"walk_nw",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_walk_se_01")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("46_walk_se_02")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("47_walk_se_03")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("48_walk_se_04")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("49_walk_se_05")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("50_walk_se_06")
+}],
+"loop": true,
+"name": &"walk_se",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_walk_sw_01")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("52_walk_sw_02")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("53_walk_sw_03")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("54_walk_sw_04")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("55_walk_sw_05")
+},
+{
+"duration": 1.0,
+"texture": ExtResource("56_walk_sw_06")
+}],
+"loop": true,
+"name": &"walk_sw",
+"speed": 8.0
+}]

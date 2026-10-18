@@ -1,0 +1,432 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/test/iso_grid.gd" id="1_grid"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="2_player"]
+[ext_resource type="SpriteFrames" path="res://characters/protagonist/animations/protagonist_frames.tres" id="3_frames"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_feet"]
+radius = 8.0
+height = 28.0
+
+[sub_resource type="ConvexPolygonShape2D" id="Footprint_SmallBlock"]
+points = PackedVector2Array(0, 0, 32, 16, 0, 32, -32, 16)
+
+[sub_resource type="ConvexPolygonShape2D" id="Footprint_LongBlock"]
+points = PackedVector2Array(0, 0, 192, 96, 160, 112, -32, 16)
+
+[sub_resource type="ConvexPolygonShape2D" id="Footprint_GapBlock1"]
+points = PackedVector2Array(0, 0, 32, 16, 0, 32, -32, 16)
+
+[sub_resource type="ConvexPolygonShape2D" id="Footprint_GapBlock2"]
+points = PackedVector2Array(0, 0, 32, 16, 0, 32, -32, 16)
+
+[sub_resource type="ConvexPolygonShape2D" id="Footprint_GapBlock3"]
+points = PackedVector2Array(0, 0, 32, 16, 0, 32, -32, 16)
+
+[sub_resource type="ConvexPolygonShape2D" id="Footprint_GapBlock4"]
+points = PackedVector2Array(0, 0, 32, 16, 0, 32, -32, 16)
+
+[node name="IsoMovementTest" type="Node2D"]
+
+[node name="IsoGrid" type="Node2D" parent="."]
+script = ExtResource("1_grid")
+
+[node name="World" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" type="CharacterBody2D" parent="World"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("2_player")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/Player"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("3_frames")
+animation = &"idle_s"
+autoplay = "idle_s"
+offset = Vector2(0, -114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_feet")
+
+[node name="Camera2D" type="Camera2D" parent="World/Player"]
+position = Vector2(0, -26)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
+
+[node name="Obstacles" type="Node2D" parent="World"]
+y_sort_enabled = true
+
+[node name="SmallBlock" type="StaticBody2D" parent="World/Obstacles"]
+y_sort_enabled = true
+position = Vector2(128, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Obstacles/SmallBlock"]
+shape = SubResource("Footprint_SmallBlock")
+
+[node name="Cell" type="Node2D" parent="World/Obstacles/SmallBlock"]
+position = Vector2(0, 16)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/SmallBlock/Cell"]
+color = Color(0.42, 0.3, 0.225, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -16, -32, -32)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/SmallBlock/Cell"]
+color = Color(0.308, 0.22, 0.165, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -32, 0, -16)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/SmallBlock/Cell"]
+color = Color(0.56, 0.4, 0.3, 1)
+polygon = PackedVector2Array(0, -48, 32, -32, 0, -16, -32, -32)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/SmallBlock/Cell"]
+points = PackedVector2Array(0, -48, 32, -32, 0, -16, -32, -32)
+closed = true
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/SmallBlock/Cell"]
+points = PackedVector2Array(-32, -32, -32, 0, 0, 16, 32, 0, 32, -32)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline3" type="Line2D" parent="World/Obstacles/SmallBlock/Cell"]
+points = PackedVector2Array(0, 16, 0, -16)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="LongBlock" type="StaticBody2D" parent="World/Obstacles"]
+y_sort_enabled = true
+position = Vector2(-32, -176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Obstacles/LongBlock"]
+shape = SubResource("Footprint_LongBlock")
+
+[node name="Cell_0_0" type="Node2D" parent="World/Obstacles/LongBlock"]
+position = Vector2(0, 16)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_0_0"]
+color = Color(0.413, 0.413, 0.39, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -40, -32, -56)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_0_0"]
+color = Color(0.303, 0.303, 0.286, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -56, 0, -40)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_0_0"]
+color = Color(0.55, 0.55, 0.52, 1)
+polygon = PackedVector2Array(0, -72, 32, -56, 0, -40, -32, -56)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/LongBlock/Cell_0_0"]
+points = PackedVector2Array(0, -40, -32, -56, 0, -72, 32, -56)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/LongBlock/Cell_0_0"]
+points = PackedVector2Array(-32, -56, -32, 0, 0, 16)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Cell_1_0" type="Node2D" parent="World/Obstacles/LongBlock"]
+position = Vector2(32, 32)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_1_0"]
+color = Color(0.413, 0.413, 0.39, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -40, -32, -56)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_1_0"]
+color = Color(0.303, 0.303, 0.286, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -56, 0, -40)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_1_0"]
+color = Color(0.55, 0.55, 0.52, 1)
+polygon = PackedVector2Array(0, -72, 32, -56, 0, -40, -32, -56)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/LongBlock/Cell_1_0"]
+points = PackedVector2Array(0, -72, 32, -56)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/LongBlock/Cell_1_0"]
+points = PackedVector2Array(0, -40, -32, -56)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline3" type="Line2D" parent="World/Obstacles/LongBlock/Cell_1_0"]
+points = PackedVector2Array(-32, 0, 0, 16)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Cell_2_0" type="Node2D" parent="World/Obstacles/LongBlock"]
+position = Vector2(64, 48)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_2_0"]
+color = Color(0.413, 0.413, 0.39, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -40, -32, -56)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_2_0"]
+color = Color(0.303, 0.303, 0.286, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -56, 0, -40)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_2_0"]
+color = Color(0.55, 0.55, 0.52, 1)
+polygon = PackedVector2Array(0, -72, 32, -56, 0, -40, -32, -56)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/LongBlock/Cell_2_0"]
+points = PackedVector2Array(0, -72, 32, -56)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/LongBlock/Cell_2_0"]
+points = PackedVector2Array(0, -40, -32, -56)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline3" type="Line2D" parent="World/Obstacles/LongBlock/Cell_2_0"]
+points = PackedVector2Array(-32, 0, 0, 16)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Cell_3_0" type="Node2D" parent="World/Obstacles/LongBlock"]
+position = Vector2(96, 64)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_3_0"]
+color = Color(0.413, 0.413, 0.39, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -40, -32, -56)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_3_0"]
+color = Color(0.303, 0.303, 0.286, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -56, 0, -40)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_3_0"]
+color = Color(0.55, 0.55, 0.52, 1)
+polygon = PackedVector2Array(0, -72, 32, -56, 0, -40, -32, -56)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/LongBlock/Cell_3_0"]
+points = PackedVector2Array(0, -72, 32, -56)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/LongBlock/Cell_3_0"]
+points = PackedVector2Array(0, -40, -32, -56)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline3" type="Line2D" parent="World/Obstacles/LongBlock/Cell_3_0"]
+points = PackedVector2Array(-32, 0, 0, 16)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Cell_4_0" type="Node2D" parent="World/Obstacles/LongBlock"]
+position = Vector2(128, 80)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_4_0"]
+color = Color(0.413, 0.413, 0.39, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -40, -32, -56)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_4_0"]
+color = Color(0.303, 0.303, 0.286, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -56, 0, -40)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_4_0"]
+color = Color(0.55, 0.55, 0.52, 1)
+polygon = PackedVector2Array(0, -72, 32, -56, 0, -40, -32, -56)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/LongBlock/Cell_4_0"]
+points = PackedVector2Array(0, -72, 32, -56)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/LongBlock/Cell_4_0"]
+points = PackedVector2Array(0, -40, -32, -56)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline3" type="Line2D" parent="World/Obstacles/LongBlock/Cell_4_0"]
+points = PackedVector2Array(-32, 0, 0, 16)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Cell_5_0" type="Node2D" parent="World/Obstacles/LongBlock"]
+position = Vector2(160, 96)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_5_0"]
+color = Color(0.413, 0.413, 0.39, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -40, -32, -56)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_5_0"]
+color = Color(0.303, 0.303, 0.286, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -56, 0, -40)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/LongBlock/Cell_5_0"]
+color = Color(0.55, 0.55, 0.52, 1)
+polygon = PackedVector2Array(0, -72, 32, -56, 0, -40, -32, -56)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/LongBlock/Cell_5_0"]
+points = PackedVector2Array(0, -72, 32, -56, 0, -40, -32, -56)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/LongBlock/Cell_5_0"]
+points = PackedVector2Array(-32, 0, 0, 16, 32, 0, 32, -56)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline3" type="Line2D" parent="World/Obstacles/LongBlock/Cell_5_0"]
+points = PackedVector2Array(0, 16, 0, -40)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="GapBlock1" type="StaticBody2D" parent="World/Obstacles"]
+y_sort_enabled = true
+position = Vector2(-192, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Obstacles/GapBlock1"]
+shape = SubResource("Footprint_GapBlock1")
+
+[node name="Cell" type="Node2D" parent="World/Obstacles/GapBlock1"]
+position = Vector2(0, 16)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/GapBlock1/Cell"]
+color = Color(0.345, 0.375, 0.315, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -24, -32, -40)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/GapBlock1/Cell"]
+color = Color(0.253, 0.275, 0.231, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -40, 0, -24)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/GapBlock1/Cell"]
+color = Color(0.46, 0.5, 0.42, 1)
+polygon = PackedVector2Array(0, -56, 32, -40, 0, -24, -32, -40)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/GapBlock1/Cell"]
+points = PackedVector2Array(0, -56, 32, -40, 0, -24, -32, -40)
+closed = true
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/GapBlock1/Cell"]
+points = PackedVector2Array(-32, -40, -32, 0, 0, 16, 32, 0, 32, -40)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline3" type="Line2D" parent="World/Obstacles/GapBlock1/Cell"]
+points = PackedVector2Array(0, 16, 0, -24)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="GapBlock2" type="StaticBody2D" parent="World/Obstacles"]
+y_sort_enabled = true
+position = Vector2(-128, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Obstacles/GapBlock2"]
+shape = SubResource("Footprint_GapBlock2")
+
+[node name="Cell" type="Node2D" parent="World/Obstacles/GapBlock2"]
+position = Vector2(0, 16)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/GapBlock2/Cell"]
+color = Color(0.345, 0.375, 0.315, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -24, -32, -40)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/GapBlock2/Cell"]
+color = Color(0.253, 0.275, 0.231, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -40, 0, -24)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/GapBlock2/Cell"]
+color = Color(0.46, 0.5, 0.42, 1)
+polygon = PackedVector2Array(0, -56, 32, -40, 0, -24, -32, -40)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/GapBlock2/Cell"]
+points = PackedVector2Array(0, -56, 32, -40, 0, -24, -32, -40)
+closed = true
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/GapBlock2/Cell"]
+points = PackedVector2Array(-32, -40, -32, 0, 0, 16, 32, 0, 32, -40)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline3" type="Line2D" parent="World/Obstacles/GapBlock2/Cell"]
+points = PackedVector2Array(0, 16, 0, -24)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="GapBlock3" type="StaticBody2D" parent="World/Obstacles"]
+y_sort_enabled = true
+position = Vector2(-64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Obstacles/GapBlock3"]
+shape = SubResource("Footprint_GapBlock3")
+
+[node name="Cell" type="Node2D" parent="World/Obstacles/GapBlock3"]
+position = Vector2(0, 16)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/GapBlock3/Cell"]
+color = Color(0.345, 0.375, 0.315, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -24, -32, -40)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/GapBlock3/Cell"]
+color = Color(0.253, 0.275, 0.231, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -40, 0, -24)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/GapBlock3/Cell"]
+color = Color(0.46, 0.5, 0.42, 1)
+polygon = PackedVector2Array(0, -56, 32, -40, 0, -24, -32, -40)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/GapBlock3/Cell"]
+points = PackedVector2Array(0, -56, 32, -40, 0, -24, -32, -40)
+closed = true
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/GapBlock3/Cell"]
+points = PackedVector2Array(-32, -40, -32, 0, 0, 16, 32, 0, 32, -40)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline3" type="Line2D" parent="World/Obstacles/GapBlock3/Cell"]
+points = PackedVector2Array(0, 16, 0, -24)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="GapBlock4" type="StaticBody2D" parent="World/Obstacles"]
+y_sort_enabled = true
+position = Vector2(0, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Obstacles/GapBlock4"]
+shape = SubResource("Footprint_GapBlock4")
+
+[node name="Cell" type="Node2D" parent="World/Obstacles/GapBlock4"]
+position = Vector2(0, 16)
+
+[node name="FaceLeft" type="Polygon2D" parent="World/Obstacles/GapBlock4/Cell"]
+color = Color(0.345, 0.375, 0.315, 1)
+polygon = PackedVector2Array(-32, 0, 0, 16, 0, -24, -32, -40)
+
+[node name="FaceRight" type="Polygon2D" parent="World/Obstacles/GapBlock4/Cell"]
+color = Color(0.253, 0.275, 0.231, 1)
+polygon = PackedVector2Array(0, 16, 32, 0, 32, -40, 0, -24)
+
+[node name="Top" type="Polygon2D" parent="World/Obstacles/GapBlock4/Cell"]
+color = Color(0.46, 0.5, 0.42, 1)
+polygon = PackedVector2Array(0, -56, 32, -40, 0, -24, -32, -40)
+
+[node name="Outline1" type="Line2D" parent="World/Obstacles/GapBlock4/Cell"]
+points = PackedVector2Array(0, -56, 32, -40, 0, -24, -32, -40)
+closed = true
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline2" type="Line2D" parent="World/Obstacles/GapBlock4/Cell"]
+points = PackedVector2Array(-32, -40, -32, 0, 0, 16, 32, 0, 32, -40)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
+
+[node name="Outline3" type="Line2D" parent="World/Obstacles/GapBlock4/Cell"]
+points = PackedVector2Array(0, 16, 0, -24)
+width = 1.0
+default_color = Color(0.1, 0.1, 0.09, 1)
